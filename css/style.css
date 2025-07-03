@@ -1,0 +1,276 @@
+:root {
+  --main-font: "Roboto", sans-serif;
+  --main-color: #1e202b;
+  --second-color: #bfc1c8;
+  --blue-color: #009ad8;
+  --gray-color: #757575;
+  --white-color: #fff;
+}
+
+* {
+  font-family: var(--main-font);
+}
+
+
+body {
+  background-color: var(--main-color);
+}
+
+
+.navbar-toggler {
+  border-color: white !important;
+}
+
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5) !important;
+}
+
+
+
+
+.header {
+  padding: 40px 0;
+  background-color: var(--main-color);
+}
+
+.header .logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header .logo img {
+  width: 64px;
+  height: 38px;
+}
+
+.header .logo small {
+  font-size: 10px;
+  color: var(--second-color);
+}
+
+.header ul li {
+  margin-right: 8px;
+}
+
+.header ul li a {
+  text-decoration: none;
+  padding: 5px 25px !important;
+  font-size: 14px;
+  color: var(--white-color);
+  text-transform: capitalize;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: border .3s, color .3s;
+}
+
+.header ul li a:hover,
+.header ul li a.active {
+  color: #009ad8 !important;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 2px solid var(--blue-color);
+}
+
+.hero {
+  padding: 70px 0;
+  background-image: url('../Images/bg-hero.png');
+  background-position: center;
+  background-size: cover;
+  min-height: 350px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.input {
+  padding: 20px;
+  padding-right: 50px;
+  background-color: var(--main-color);
+  width: 100%;
+  border-radius: 30px;
+  color: var(--white-color);
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--gray-color);
+}
+
+form {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.hero form button.find,
+.subscribe {
+  border: none;
+  background-color: var(--blue-color);
+  padding: 0 40px;
+  border-radius: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  color: var(--white-color);
+  transition: background-color .3s;
+}
+
+.hero form button.find:hover,
+.subscribe:hover {
+  background-color: rgba(0, 155, 216, 0.7);
+}
+
+
+.forecast {
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+
+.forecast .forecast-container {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 50px;
+  margin-top: -130px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.forecast .forecast-container> :nth-child(odd) {
+  background-color: #323544;
+}
+
+.forecast .forecast-container> :nth-child(even) {
+  background-color: #262936;
+}
+
+.forecast .forecast-item {
+  width: calc(100% / 3);
+}
+
+
+.forecast .forecast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+
+.forecast .forecast-body {
+  padding: 30px 20px;
+}
+
+.forecast .forecast-body .location {
+  font-size: 18px;
+}
+
+.forecast .forecast-body .degree {
+  color: var(--white-color);
+}
+
+.forecast .forecast-item .forecast-body .degree .number {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.forecast .forecast-item.today .forecast-body .degree .number {
+  font-size: 90px;
+  font-weight: 700;
+}
+
+.forecast .forecast-body .type {
+  color: var(--blue-color);
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.forecast .forecast-body .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.forecast .forecast-body .info>div {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.forecast .forecast-body .info img {
+  width: 21px;
+  height: 21px;
+}
+
+
+footer {
+  background-color: #262936;
+  padding: 50px 0;
+}
+
+footer form {
+  margin-bottom: 30px;
+}
+
+footer .input {
+  padding-right: 100px;
+}
+
+.subscribe {
+  padding: 10px 20px;
+}
+
+footer ul li {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+footer ul li:hover {
+  background-color: var(--blue-color);
+}
+
+footer ul li a {
+  color: var(--blue-color);
+  transition: color .3s;
+}
+
+footer ul li:hover a {
+  color: var(--white-color);
+}
+
+footer p {
+  color: var(--gray-color);
+}
+
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .forecast .forecast-item {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .forecast .forecast-item {
+    width: 100%;
+  }
+  .forecast .forecast-item.today .forecast-body .degree .number {
+    font-size: 50px;
+  }
+}
